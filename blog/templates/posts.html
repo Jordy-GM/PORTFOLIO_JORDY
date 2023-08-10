@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+<h1>POSTS</h1>
+
+<pre>
+
+    {%for y in POSTBLOG%}
+
+<h1>{{y.title}}</h1>
+<h3>{{y.date |date:'l F o'}}</h3>
+<p> {{y.description |striptags|truncatechars:100}}</p>
+<img src="{{y.image.url}}" alt="{{y.title}}">
+<a href="{% url 'blog:publi_nume' y.id %}">{{y.title}}</a>
+
+
+    {% endfor %}
+
+</pre>
+
+{% endblock %}

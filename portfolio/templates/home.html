@@ -1,0 +1,126 @@
+<!-- extiende desde el rchivo layout.html el  block contenido  -->
+
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+{% load static %}
+
+<header class="row">
+    <div class="col-md-4"> </div>
+
+    <header class="fondo-f" style="display: flex; align-items: center;">
+        <img src="{% static 'imagen perfil.jpg' %}" alt="">
+
+        <ul style="list-style: none; padding-left: 0 margin-left 20px;">
+            <li>
+                <h2> Cursos </h2>
+            </li>
+            <li> <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-f48ba90e-b656-42e1-9711-4e9d08a41e64.pdf"
+                    target="_blank">Python</a> : Seniority avanzado</li>
+            <li>Django : Seniority avanzado</li>
+            <li>Excel : Seniority Experto</li>
+            <li>Microsoft Office : Intermedio</li>
+            <li><a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-5b0884f2-b722-4c33-91d6-d780bfee3eb5.pdf"
+                    target="_blank">PostgresSql</a> : Intermedio</li>
+
+        </ul>
+        <ul style="list-style: none; padding-left: 0 margin-left 20px;">
+            <li>
+                <h2> Experiencia </h2>
+            </li>
+            <li>Telefono : 0983167439/0968087749</li>
+            <li>Correo : Giler_moreno@hotmail.com</li>
+            <li>Direccion : Calle 24B NO y Av. 38, Guayaquil, Guayas, Ecuador</li>
+            <li>linkedin: <a href="https://www.linkedin.com/in/jordy-g-670973246/" target="_blank">Jordy Giler</a></li>
+
+        </ul>
+
+
+    </header>
+
+
+
+    <div class=" col-md-8"></div>
+
+    <h1> <strong class="text-center"> Jordy Giler </strong></h1>
+    <h4> Desarrollador Backend </h4>
+    <li style="list-style-type: none;">
+        <p>¡Hola! Mi nombre es Jordy Giler y soy un apasionado desarrollador de software con un enfoque especial en la
+            creación de aplicaciones web y soluciones digitales. Desde una temprana edad, siempre he sentido una
+            fascinación
+            por la tecnología y cómo puede mejorar nuestras vidas de manera significativa. A medida que crecía, mi
+            interés
+            se centraba cada vez más en el mundo del desarrollo de software y la creación de experiencias digitales
+            innovadoras. Mi viaje en el desarrollo web comenzó con el descubrimiento de Django, un framework de Python
+            para
+            el desarrollo web. Fue un momento revelador para mí, ya que me di cuenta de que podía dar vida a mis ideas y
+            conceptos a través de la programación. Desde entonces, he estado inmerso en el mundo de Django, utilizando
+            sus
+            poderosas características para construir aplicaciones web robustas y escalables. Mi experiencia en el manejo
+            de
+            bases de datos se ha forjado a través de mi trabajo con PostgreSQL. He aprendido a diseñar y optimizar bases
+            de
+            datos para garantizar un rendimiento eficiente y confiable en las aplicaciones que construyo. La gestión de
+            datos es esencial en cualquier aplicación, y mi enfoque meticuloso en el diseño de bases de datos me ha
+            permitido crear sistemas sólidos que manejan información de manera efectiva. Python, para mí, es más que un
+            lenguaje de programación; es una herramienta que utilizo para resolver problemas y materializar conceptos.
+            Mi
+            conocimiento de Python me ha permitido crear código limpio y modular, lo que facilita el mantenimiento y la
+            expansión de mis proyectos. Siempre busco oportunidades para aprender más y mejorar mis habilidades en este
+            lenguaje versátil. En cuanto al diseño de interfaces, considero que HTML y CSS son mis aliados creativos.
+            Crear
+            interfaces atractivas y responsivas es fundamental para brindar una experiencia de usuario excepcional. Mi
+            habilidad para combinar estos lenguajes y crear diseños visualmente atractivos y funcionales es un aspecto
+            en el
+            que me enorgullezco y sigo perfeccionando.</p>
+    </li>
+
+
+
+</header>
+
+
+
+<div class="row my-4 text-center">
+
+    <h1> Contacto </h1>
+
+    <h1>
+
+
+    </h1>
+
+
+
+
+    {%for x in PRDB%}
+
+    <div class="col-md-4">
+
+        <div class="card card-project" style="background-color: #9ac5fdec;">
+
+            <div class="card-body">
+
+                <h1> {{x.title}} </h1>
+                <h3>{{x.date}}</h3>
+                <p> {{x.description}}</p>
+
+                <img src="{{ x.image.url }}" alt="{{ x.title }}" class="img-fluid" />
+
+                {% if x.url %}
+                <a href="{{x.url}}" class="btn btn-success rounded-0 btn-sm" target="_blank">{{x.url}}</a>
+                {%endif%}
+            </div>
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+
+    {% endblock%}
+
+
+</div>

@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+<h1> publicacion </h1>
+
+<!-- no es necesario rrecorrer el objeto con for ya que solo esta pasando un solo objeto 
+del modelo con sus respectivos atributos (title, description, image, date) -->
+
+
+<h1>{{id.title}}</h1>
+<h3>{{id.date}}</h3>
+<p> {{id.description }}</p>
+<img src="{{id.image.url}}" alt="{{id.title}}">
+
+{% endblock %}

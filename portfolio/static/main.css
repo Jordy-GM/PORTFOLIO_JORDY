@@ -1,0 +1,20 @@
+body {
+
+    background-color: rgb(233, 236, 235);
+}
+
+.fondo-f {
+
+    background-color: rgb(215, 226, 236);
+}
+
+.card-project {
+    border: 1px solid #ccc;
+    transition: transform 0.3s, border 0.3s;
+}
+
+.card-project:hover {
+    border: 1px solid #eee;
+    transform: scale(1.05);
+    cursor: pointer;
+}
